@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "624693064620",
+    "project_id": "exaverse-93feb",
+    "storage_bucket": "exaverse-93feb.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:624693064620:android:aeb28fae16241957948009",
+        "android_client_info": {
+          "package_name": "com.mycompany.exaverse"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCnV9p9xLQWl_wV3l3ruLn3V5LyCnwZ1Fs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
