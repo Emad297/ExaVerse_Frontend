@@ -97,7 +97,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                                   onPressed: () {
                                     print('Button pressed ...');
                                   },
-                                  text: 'My Profile',
+                                  text: 'پروفایل من',
                                   options: FFButtonOptions(
                                     width: 0.0,
                                     height: 38.0,
@@ -130,7 +130,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                                     context.goNamedAuth(
                                         'LoginPage', context.mounted);
                                   },
-                                  text: 'Log Out',
+                                  text: 'از حساب من خارج شو',
                                   options: FFButtonOptions(
                                     height: 38.0,
                                     padding: EdgeInsetsDirectional.fromSTEB(
@@ -192,7 +192,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                                               },
                                               text: 'ChatGPT',
                                               options: FFButtonOptions(
-                                                height: 479.0,
+                                                height: 394.0,
                                                 padding: EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         24.0, 0.0, 24.0, 0.0),
@@ -225,7 +225,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                                               },
                                               text: 'Dall-E 3',
                                               options: FFButtonOptions(
-                                                height: 397.0,
+                                                height: 318.0,
                                                 padding: EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         24.0, 0.0, 24.0, 0.0),
@@ -254,9 +254,9 @@ class _HomeWidgetState extends State<HomeWidget> {
                                               onPressed: () {
                                                 print('Button pressed ...');
                                               },
-                                              text: 'StableDiffusion',
+                                              text: 'بیشتر...',
                                               options: FFButtonOptions(
-                                                height: 483.0,
+                                                height: 432.0,
                                                 padding: EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         24.0, 0.0, 24.0, 0.0),
@@ -285,7 +285,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                                               onPressed: () {
                                                 print('Button pressed ...');
                                               },
-                                              text: 'More...',
+                                              text: 'Stable Diffiusion',
                                               options: FFButtonOptions(
                                                 height: 400.0,
                                                 padding: EdgeInsetsDirectional

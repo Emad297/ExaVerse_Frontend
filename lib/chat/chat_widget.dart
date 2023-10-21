@@ -174,7 +174,7 @@ class _ChatWidgetState extends State<ChatWidget> {
                                 autofocus: true,
                                 obscureText: false,
                                 decoration: InputDecoration(
-                                  labelText: 'Type Here ...',
+                                  labelText: 'اینجا تایپ کن',
                                   labelStyle: FlutterFlowTheme.of(context)
                                       .labelMedium
                                       .override(
@@ -220,6 +220,7 @@ class _ChatWidgetState extends State<ChatWidget> {
                                       fontFamily: 'Outfit',
                                       fontSize: 16.0,
                                     ),
+                                textAlign: TextAlign.end,
                                 maxLines: 8,
                                 minLines: 1,
                                 validator: _model.textControllerValidator
@@ -228,14 +229,14 @@ class _ChatWidgetState extends State<ChatWidget> {
                             ),
                           ),
                           FlutterFlowIconButton(
-                            borderColor: FlutterFlowTheme.of(context).primary,
+                            borderColor: Colors.white,
                             borderRadius: 20.0,
                             borderWidth: 1.0,
                             buttonSize: 40.0,
-                            fillColor: FlutterFlowTheme.of(context).accent1,
+                            fillColor: Colors.white,
                             icon: Icon(
                               Icons.send,
-                              color: FlutterFlowTheme.of(context).primaryText,
+                              color: Colors.black,
                               size: 24.0,
                             ),
                             onPressed: () async {

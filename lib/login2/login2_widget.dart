@@ -90,6 +90,12 @@ class _Login2WidgetState extends State<Login2Widget> {
                           width: 100.0,
                           height: 100.0,
                           decoration: BoxDecoration(
+                            image: DecorationImage(
+                              fit: BoxFit.cover,
+                              image: Image.network(
+                                'https://images.unsplash.com/photo-1653549893012-b8b4fbe97630?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NTYyMDF8MHwxfHNlYXJjaHwyMXx8bmV1cm9uc3xlbnwwfHx8fDE2OTc5Mjg3MTN8MA&ixlib=rb-4.0.3&q=80&w=1080',
+                              ).image,
+                            ),
                             gradient: LinearGradient(
                               colors: [Color(0x00FFFFFF), Colors.white],
                               stops: [0.0, 1.0],
@@ -98,22 +104,6 @@ class _Login2WidgetState extends State<Login2Widget> {
                             ),
                           ),
                           alignment: AlignmentDirectional(0.00, 1.00),
-                          child: Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
-                                24.0, 64.0, 24.0, 24.0),
-                            child: Text(
-                              'Join us & cook with confidence',
-                              textAlign: TextAlign.center,
-                              style: FlutterFlowTheme.of(context)
-                                  .displayMedium
-                                  .override(
-                                    fontFamily: 'Urbanist',
-                                    color: Color(0xFF101213),
-                                    fontSize: 48.0,
-                                    fontWeight: FontWeight.bold,
-                                  ),
-                            ),
-                          ),
                         ),
                       ),
                     ),
@@ -131,7 +121,7 @@ class _Login2WidgetState extends State<Login2Widget> {
                               onPressed: () {
                                 print('Button pressed ...');
                               },
-                              text: 'Sign up with e-mail',
+                              text: 'ثبت نام با ایمیل',
                               icon: Icon(
                                 Icons.mail_outline_outlined,
                                 color: Colors.white,
@@ -168,7 +158,7 @@ class _Login2WidgetState extends State<Login2Widget> {
                             padding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 12.0, 0.0, 12.0),
                             child: Text(
-                              'Or use social media',
+                              'یا از طریق شبکه های مجازی',
                               style: FlutterFlowTheme.of(context)
                                   .labelMedium
                                   .override(
@@ -193,7 +183,7 @@ class _Login2WidgetState extends State<Login2Widget> {
 
                                 context.goNamedAuth('Home', context.mounted);
                               },
-                              text: 'Sign up with Google',
+                              text: 'ثبت نام با گوگل',
                               icon: FaIcon(
                                 FontAwesomeIcons.google,
                                 color: Color(0xFF101213),
@@ -228,36 +218,51 @@ class _Login2WidgetState extends State<Login2Widget> {
                           Padding(
                             padding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 24.0, 0.0, 64.0),
-                            child: RichText(
-                              textScaleFactor:
-                                  MediaQuery.of(context).textScaleFactor,
-                              text: TextSpan(
-                                children: [
-                                  TextSpan(
-                                    text: 'Already have an account?',
-                                    style: TextStyle(),
-                                  ),
-                                  TextSpan(
-                                    text: ' Log In!',
-                                    style: FlutterFlowTheme.of(context)
-                                        .bodyLarge
-                                        .override(
-                                          fontFamily: 'Plus Jakarta Sans',
-                                          color: Color(0xFF101213),
-                                          fontSize: 16.0,
-                                          fontWeight: FontWeight.bold,
-                                          decoration: TextDecoration.underline,
-                                        ),
-                                  )
-                                ],
-                                style: FlutterFlowTheme.of(context)
-                                    .labelLarge
-                                    .override(
-                                      fontFamily: 'Plus Jakarta Sans',
-                                      color: Color(0xFF57636C),
-                                      fontSize: 16.0,
-                                      fontWeight: FontWeight.w500,
+                            child: InkWell(
+                              splashColor: Colors.transparent,
+                              focusColor: Colors.transparent,
+                              hoverColor: Colors.transparent,
+                              highlightColor: Colors.transparent,
+                              onTap: () async {
+                                GoRouter.of(context).prepareAuthEvent();
+                                final user =
+                                    await authManager.signInWithGoogle(context);
+                                if (user == null) {
+                                  return;
+                                }
+
+                                context.goNamedAuth('Home', context.mounted);
+                              },
+                              child: RichText(
+                                textScaleFactor:
+                                    MediaQuery.of(context).textScaleFactor,
+                                text: TextSpan(
+                                  children: [
+                                    TextSpan(
+                                      text: '  از قبل حساب کاربری داری؟',
+                                      style: TextStyle(),
                                     ),
+                                    TextSpan(
+                                      text: '  راحت وارد شو',
+                                      style: FlutterFlowTheme.of(context)
+                                          .bodyLarge
+                                          .override(
+                                            fontFamily: 'Plus Jakarta Sans',
+                                            color: Color(0xFF101213),
+                                            fontSize: 16.0,
+                                            fontWeight: FontWeight.bold,
+                                          ),
+                                    )
+                                  ],
+                                  style: FlutterFlowTheme.of(context)
+                                      .labelLarge
+                                      .override(
+                                        fontFamily: 'Plus Jakarta Sans',
+                                        color: Color(0xFF57636C),
+                                        fontSize: 16.0,
+                                        fontWeight: FontWeight.w500,
+                                      ),
+                                ),
                               ),
                             ),
                           ),

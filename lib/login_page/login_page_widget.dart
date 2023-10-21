@@ -366,7 +366,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget>
                                               MainAxisAlignment.center,
                                           children: [
                                             Text(
-                                              'Live Smarter, \nNot Harder',
+                                              'هوش مصنوعی',
                                               textAlign: TextAlign.center,
                                               style: FlutterFlowTheme.of(
                                                       context)
@@ -392,7 +392,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget>
                                               MainAxisAlignment.center,
                                           children: [
                                             Text(
-                                              'Live Smarter, \nNot Harder',
+                                              'هوش مصنوعی',
                                               textAlign: TextAlign.center,
                                               style: FlutterFlowTheme.of(
                                                       context)
@@ -418,7 +418,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget>
                                               MainAxisAlignment.center,
                                           children: [
                                             Text(
-                                              'Live Smarter, \nNot Harder',
+                                              'هوش مصنوعی',
                                               textAlign: TextAlign.center,
                                               style: FlutterFlowTheme.of(
                                                       context)
@@ -493,7 +493,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget>
                                     },
                                   );
                                 },
-                                text: 'Next',
+                                text: 'بعدی',
                                 options: FFButtonOptions(
                                   width: double.infinity,
                                   height: 61.0,
