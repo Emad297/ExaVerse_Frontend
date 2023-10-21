@@ -8,25 +8,25 @@ import 'package:flutter/services.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
-import 'login2_model.dart';
-export 'login2_model.dart';
+import 'login_model.dart';
+export 'login_model.dart';
 
-class Login2Widget extends StatefulWidget {
-  const Login2Widget({Key? key}) : super(key: key);
+class LoginWidget extends StatefulWidget {
+  const LoginWidget({Key? key}) : super(key: key);
 
   @override
-  _Login2WidgetState createState() => _Login2WidgetState();
+  _LoginWidgetState createState() => _LoginWidgetState();
 }
 
-class _Login2WidgetState extends State<Login2Widget> {
-  late Login2Model _model;
+class _LoginWidgetState extends State<LoginWidget> {
+  late LoginModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => Login2Model());
+    _model = createModel(context, () => LoginModel());
 
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
@@ -52,7 +52,7 @@ class _Login2WidgetState extends State<Login2Widget> {
     context.watch<FFAppState>();
 
     return Title(
-        title: 'Login2',
+        title: 'Login',
         color: FlutterFlowTheme.of(context).primary.withAlpha(0XFF),
         child: GestureDetector(
           onTap: () => _model.unfocusNode.canRequestFocus

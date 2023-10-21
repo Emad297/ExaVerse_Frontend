@@ -2,7 +2,7 @@ import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
-import 'login_page_widget.dart' show LoginPageWidget;
+import 'landing_widget.dart' show LandingWidget;
 import 'package:smooth_page_indicator/smooth_page_indicator.dart'
     as smooth_page_indicator;
 import 'package:flutter/material.dart';
@@ -13,7 +13,7 @@ import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 
-class LoginPageModel extends FlutterFlowModel<LoginPageWidget> {
+class LandingModel extends FlutterFlowModel<LandingWidget> {
   ///  State fields for stateful widgets in this page.
 
   final unfocusNode = FocusNode();

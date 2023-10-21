@@ -11,19 +11,19 @@ import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
-import 'login_page_model.dart';
-export 'login_page_model.dart';
+import 'landing_model.dart';
+export 'landing_model.dart';
 
-class LoginPageWidget extends StatefulWidget {
-  const LoginPageWidget({Key? key}) : super(key: key);
+class LandingWidget extends StatefulWidget {
+  const LandingWidget({Key? key}) : super(key: key);
 
   @override
-  _LoginPageWidgetState createState() => _LoginPageWidgetState();
+  _LandingWidgetState createState() => _LandingWidgetState();
 }
 
-class _LoginPageWidgetState extends State<LoginPageWidget>
+class _LandingWidgetState extends State<LandingWidget>
     with TickerProviderStateMixin {
-  late LoginPageModel _model;
+  late LandingModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
@@ -135,7 +135,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget>
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => LoginPageModel());
+    _model = createModel(context, () => LandingModel());
 
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
@@ -161,7 +161,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget>
     context.watch<FFAppState>();
 
     return Title(
-        title: 'LoginPage',
+        title: 'Landing',
         color: FlutterFlowTheme.of(context).primary.withAlpha(0XFF),
         child: GestureDetector(
           onTap: () => _model.unfocusNode.canRequestFocus
@@ -176,16 +176,17 @@ class _LoginPageWidgetState extends State<LoginPageWidget>
                 ClipRRect(
                   child: Container(
                     width: double.infinity,
-                    height: 522.0,
+                    height: 553.0,
                     decoration: BoxDecoration(
                       color: Colors.white,
                     ),
                     child: Column(
                       mainAxisSize: MainAxisSize.max,
+                      mainAxisAlignment: MainAxisAlignment.start,
                       children: [
                         Container(
                           width: double.infinity,
-                          height: 600.0,
+                          height: 552.0,
                           decoration: BoxDecoration(
                             color: Colors.white,
                           ),
@@ -346,7 +347,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget>
                         children: [
                           Container(
                             width: double.infinity,
-                            height: 211.0,
+                            height: 194.0,
                             child: Stack(
                               children: [
                                 Padding(
@@ -482,7 +483,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget>
                               child: FFButtonWidget(
                                 onPressed: () async {
                                   context.pushNamed(
-                                    'Login2',
+                                    'Login',
                                     extra: <String, dynamic>{
                                       kTransitionInfoKey: TransitionInfo(
                                         hasTransition: true,

@@ -128,7 +128,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                                         .clearRedirectLocation();
 
                                     context.goNamedAuth(
-                                        'LoginPage', context.mounted);
+                                        'Landing', context.mounted);
                                   },
                                   text: 'از حساب من خارج شو',
                                   options: FFButtonOptions(
@@ -187,8 +187,8 @@ class _HomeWidgetState extends State<HomeWidget> {
                                     itemBuilder: (context, index) {
                                       return [
                                         () => FFButtonWidget(
-                                              onPressed: () {
-                                                print('Button pressed ...');
+                                              onPressed: () async {
+                                                context.pushNamed('Chat');
                                               },
                                               text: 'ChatGPT',
                                               options: FFButtonOptions(
