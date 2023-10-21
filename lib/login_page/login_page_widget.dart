@@ -158,6 +158,8 @@ class _LoginPageWidgetState extends State<LoginPageWidget>
       );
     }
 
+    context.watch<FFAppState>();
+
     return Title(
         title: 'LoginPage',
         color: FlutterFlowTheme.of(context).primary.withAlpha(0XFF),

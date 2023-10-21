@@ -49,6 +49,8 @@ class _Login2WidgetState extends State<Login2Widget> {
       );
     }
 
+    context.watch<FFAppState>();
+
     return Title(
         title: 'Login2',
         color: FlutterFlowTheme.of(context).primary.withAlpha(0XFF),

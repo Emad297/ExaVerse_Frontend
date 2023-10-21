@@ -48,6 +48,8 @@ class _HomeWidgetState extends State<HomeWidget> {
       );
     }
 
+    context.watch<FFAppState>();
+
     return Title(
         title: 'Home',
         color: FlutterFlowTheme.of(context).primary.withAlpha(0XFF),
