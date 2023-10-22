@@ -95,108 +95,126 @@ class _ChatWidgetState extends State<ChatWidget> {
                                   return Column(
                                     mainAxisSize: MainAxisSize.max,
                                     children: [
-                                      Row(
-                                        mainAxisSize: MainAxisSize.max,
-                                        children: [
-                                          Padding(
-                                            padding:
-                                                EdgeInsetsDirectional.fromSTEB(
-                                                    10.0, 10.0, 10.0, 10.0),
-                                            child: Container(
-                                              width: 280.0,
-                                              height: 76.0,
-                                              decoration: BoxDecoration(
-                                                color: Color(0xFF3C3C5E),
-                                                borderRadius:
-                                                    BorderRadius.circular(25.0),
-                                              ),
-                                              child: Column(
-                                                mainAxisSize: MainAxisSize.max,
-                                                children: [
-                                                  Padding(
-                                                    padding:
-                                                        EdgeInsetsDirectional
-                                                            .fromSTEB(
-                                                                25.0,
-                                                                25.0,
-                                                                25.0,
-                                                                25.0),
-                                                    child: Text(
-                                                      getJsonField(
-                                                        chatItem,
-                                                        r'''$.content''',
-                                                      ).toString(),
-                                                      textAlign:
-                                                          TextAlign.start,
-                                                      style: FlutterFlowTheme
-                                                              .of(context)
-                                                          .bodyMedium
-                                                          .override(
-                                                            fontFamily:
-                                                                'Outfit',
-                                                            color: Colors.white,
-                                                            fontSize: 18.0,
-                                                          ),
+                                      if ((String role) {
+                                        return role != "user";
+                                      }(getJsonField(
+                                        chatItem,
+                                        r'''$.role''',
+                                      ).toString()))
+                                        Row(
+                                          mainAxisSize: MainAxisSize.max,
+                                          children: [
+                                            Padding(
+                                              padding: EdgeInsetsDirectional
+                                                  .fromSTEB(
+                                                      10.0, 10.0, 10.0, 10.0),
+                                              child: Container(
+                                                width: 280.0,
+                                                height: 76.0,
+                                                decoration: BoxDecoration(
+                                                  color: Color(0xFF3C3C5E),
+                                                  borderRadius:
+                                                      BorderRadius.circular(
+                                                          25.0),
+                                                ),
+                                                child: Column(
+                                                  mainAxisSize:
+                                                      MainAxisSize.max,
+                                                  children: [
+                                                    Padding(
+                                                      padding:
+                                                          EdgeInsetsDirectional
+                                                              .fromSTEB(
+                                                                  25.0,
+                                                                  25.0,
+                                                                  25.0,
+                                                                  25.0),
+                                                      child: Text(
+                                                        getJsonField(
+                                                          chatItem,
+                                                          r'''$.content''',
+                                                        ).toString(),
+                                                        textAlign:
+                                                            TextAlign.start,
+                                                        style: FlutterFlowTheme
+                                                                .of(context)
+                                                            .bodyMedium
+                                                            .override(
+                                                              fontFamily:
+                                                                  'Outfit',
+                                                              color:
+                                                                  Colors.white,
+                                                              fontSize: 18.0,
+                                                            ),
+                                                      ),
                                                     ),
-                                                  ),
-                                                ],
+                                                  ],
+                                                ),
                                               ),
                                             ),
-                                          ),
-                                        ],
-                                      ),
-                                      Row(
-                                        mainAxisSize: MainAxisSize.max,
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.end,
-                                        children: [
-                                          Padding(
-                                            padding:
-                                                EdgeInsetsDirectional.fromSTEB(
-                                                    25.0, 25.0, 25.0, 25.0),
-                                            child: Container(
-                                              width: 280.0,
-                                              height: 78.0,
-                                              decoration: BoxDecoration(
-                                                color:
-                                                    FlutterFlowTheme.of(context)
-                                                        .textColor,
-                                                borderRadius:
-                                                    BorderRadius.circular(25.0),
-                                              ),
-                                              child: Column(
-                                                mainAxisSize: MainAxisSize.max,
-                                                children: [
-                                                  Padding(
-                                                    padding:
-                                                        EdgeInsetsDirectional
-                                                            .fromSTEB(
-                                                                25.0,
-                                                                25.0,
-                                                                25.0,
-                                                                25.0),
-                                                    child: Text(
-                                                      getJsonField(
-                                                        chatItem,
-                                                        r'''$.content''',
-                                                      ).toString(),
-                                                      style: FlutterFlowTheme
-                                                              .of(context)
-                                                          .bodyMedium
-                                                          .override(
-                                                            fontFamily:
-                                                                'Outfit',
-                                                            color: Colors.white,
-                                                            fontSize: 18.0,
-                                                          ),
+                                          ],
+                                        ),
+                                      if ((String role) {
+                                        return role == "user";
+                                      }(getJsonField(
+                                        chatItem,
+                                        r'''$.role''',
+                                      ).toString()))
+                                        Row(
+                                          mainAxisSize: MainAxisSize.max,
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.end,
+                                          children: [
+                                            Padding(
+                                              padding: EdgeInsetsDirectional
+                                                  .fromSTEB(
+                                                      25.0, 25.0, 25.0, 25.0),
+                                              child: Container(
+                                                width: 280.0,
+                                                height: 78.0,
+                                                decoration: BoxDecoration(
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .textColor,
+                                                  borderRadius:
+                                                      BorderRadius.circular(
+                                                          25.0),
+                                                ),
+                                                child: Column(
+                                                  mainAxisSize:
+                                                      MainAxisSize.max,
+                                                  children: [
+                                                    Padding(
+                                                      padding:
+                                                          EdgeInsetsDirectional
+                                                              .fromSTEB(
+                                                                  25.0,
+                                                                  25.0,
+                                                                  25.0,
+                                                                  25.0),
+                                                      child: Text(
+                                                        getJsonField(
+                                                          chatItem,
+                                                          r'''$.content''',
+                                                        ).toString(),
+                                                        style: FlutterFlowTheme
+                                                                .of(context)
+                                                            .bodyMedium
+                                                            .override(
+                                                              fontFamily:
+                                                                  'Outfit',
+                                                              color:
+                                                                  Colors.white,
+                                                              fontSize: 18.0,
+                                                            ),
+                                                      ),
                                                     ),
-                                                  ),
-                                                ],
+                                                  ],
+                                                ),
                                               ),
                                             ),
-                                          ),
-                                        ],
-                                      ),
+                                          ],
+                                        ),
                                     ],
                                   );
                                 },
