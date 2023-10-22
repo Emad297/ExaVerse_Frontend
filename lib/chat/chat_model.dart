@@ -16,10 +16,10 @@ class ChatModel extends FlutterFlowModel<ChatWidget> {
   final unfocusNode = FocusNode();
   // State field(s) for ListView widget.
   ScrollController? listViewController;
-  // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode;
-  TextEditingController? textController;
-  String? Function(BuildContext, String?)? textControllerValidator;
+  // State field(s) for promptTextField widget.
+  FocusNode? promptTextFieldFocusNode;
+  TextEditingController? promptTextFieldController;
+  String? Function(BuildContext, String?)? promptTextFieldControllerValidator;
   // Stores action output result for [Backend Call - API (Send Full Prompt)] action in IconButton widget.
   ApiCallResponse? chatGPTResponse;
 
@@ -32,8 +32,8 @@ class ChatModel extends FlutterFlowModel<ChatWidget> {
   void dispose() {
     unfocusNode.dispose();
     listViewController?.dispose();
-    textFieldFocusNode?.dispose();
-    textController?.dispose();
+    promptTextFieldFocusNode?.dispose();
+    promptTextFieldController?.dispose();
   }
 
   /// Action blocks are added here.

@@ -28,8 +28,8 @@ class _ChatWidgetState extends State<ChatWidget> {
     super.initState();
     _model = createModel(context, () => ChatModel());
 
-    _model.textController ??= TextEditingController();
-    _model.textFieldFocusNode ??= FocusNode();
+    _model.promptTextFieldController ??= TextEditingController();
+    _model.promptTextFieldFocusNode ??= FocusNode();
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
@@ -244,8 +244,8 @@ class _ChatWidgetState extends State<ChatWidget> {
                                 padding: EdgeInsetsDirectional.fromSTEB(
                                     25.0, 10.0, 25.0, 10.0),
                                 child: TextFormField(
-                                  controller: _model.textController,
-                                  focusNode: _model.textFieldFocusNode,
+                                  controller: _model.promptTextFieldController,
+                                  focusNode: _model.promptTextFieldFocusNode,
                                   autofocus: true,
                                   obscureText: false,
                                   decoration: InputDecoration(
@@ -300,7 +300,8 @@ class _ChatWidgetState extends State<ChatWidget> {
                                   textAlign: TextAlign.end,
                                   maxLines: 8,
                                   minLines: 1,
-                                  validator: _model.textControllerValidator
+                                  validator: _model
+                                      .promptTextFieldControllerValidator
                                       .asValidator(context),
                                 ),
                               ),
@@ -321,8 +322,8 @@ class _ChatWidgetState extends State<ChatWidget> {
                                   FFAppState().chatHistory =
                                       functions.saveChatHistory(
                                           FFAppState().chatHistory,
-                                          functions.convertToJSON(
-                                              _model.textController.text));
+                                          functions.convertToJSON(_model
+                                              .promptTextFieldController.text));
                                 });
                                 _model.chatGPTResponse =
                                     await OpenAIChatGPTGroup.sendFullPromptCall
@@ -339,14 +340,14 @@ class _ChatWidgetState extends State<ChatWidget> {
                                             FFAppState().chatHistory,
                                             OpenAIChatGPTGroup
                                                 .sendFullPromptCall
-                                                .content(
+                                                .message(
                                               (_model.chatGPTResponse
                                                       ?.jsonBody ??
                                                   ''),
                                             ));
                                   });
                                   setState(() {
-                                    _model.textController?.clear();
+                                    _model.promptTextFieldController?.clear();
                                   });
                                 }
                                 await Future.delayed(

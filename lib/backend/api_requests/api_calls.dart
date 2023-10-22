@@ -20,7 +20,7 @@ class OpenAIChatGPTGroup {
 
 class SendFullPromptCall {
   Future<ApiCallResponse> call({
-    String? apiKey = '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',
+    String? apiKey = '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',
     dynamic? promptJson,
   }) async {
     final prompt = _serializeJson(promptJson);
@@ -58,6 +58,10 @@ class SendFullPromptCall {
   dynamic role(dynamic response) => getJsonField(
         response,
         r'''$.choices[:].message.role''',
+      );
+  dynamic message(dynamic response) => getJsonField(
+        response,
+        r'''$.choices[:].message''',
       );
 }
 
