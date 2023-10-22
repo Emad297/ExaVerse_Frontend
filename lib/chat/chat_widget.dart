@@ -329,7 +329,7 @@ class _ChatWidgetState extends State<ChatWidget> {
                                     await OpenAIChatGPTGroup.sendFullPromptCall
                                         .call(
                                   apiKey:
-                                      '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',
+                                      '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',
                                   promptJson: FFAppState().chatHistory,
                                 );
                                 if ((_model.chatGPTResponse?.succeeded ??
